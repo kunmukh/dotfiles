@@ -1,0 +1,6 @@
+i# NB: `pdb` only accepts single-line statements
+import os
+with open(os.path.expanduser("~/.pdbrc.py")) as _f: _f = _f.read()  :wq!
+exec(_f)
+del _f
+
