@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "dot-zshrc": "shell",
+        "home/dot-zshrc": "shell",        
+},
+"files.defaultLanguage": "zsh"
+}

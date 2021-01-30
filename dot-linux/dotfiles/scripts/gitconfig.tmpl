@@ -1,0 +1,40 @@
+[user]
+	name = Kangkook Jee 
+	email = kangkook.jee@utdallas.edu 
+	signingkey = ##KEY## 
+
+[color]
+	ui = true
+
+[push]
+	default = matching
+	gpgsign = false
+
+[pull]
+	rebase = false
+
+[rerere]
+	enabled = true
+
+[credential]
+	# helper = osxkeychain
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+
+[core]
+	excludesfile = ##HOME##/.gitignore_global
+	autocrlf = input
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	# cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[commit]
+	gpgsign = false # TODO: enable it again.
+	template = ##HOME##/.stCommitMsg
+
+[gpg]
+	program = ##GPG##
