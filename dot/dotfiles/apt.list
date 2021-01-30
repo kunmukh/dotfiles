@@ -1,5 +1,0 @@
-git zip tmux vim stow pass httpie libffi-dev
-gpg # 16.04 and prior doesn't have gpg package.
-fzf # 18.04 and prior doesn't have fzf deb package.
-# To compile git-credential-libsecret
-libsecret-1-0  libsecret-1-dev make gcc
