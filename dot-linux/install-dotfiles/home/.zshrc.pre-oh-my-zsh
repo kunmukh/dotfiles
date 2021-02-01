@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/kunmukh/.oh-my-zsh"
+export ZSH="/Users/kunmukh/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -45,8 +45,6 @@ ZSH_THEME="dallas"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -70,14 +68,16 @@ ZSH_THEME="dallas"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx colored-man-pages fzf zsh-completions zsh-autosuggestions)
-autoload -U compinit && compinit
+plugins=(git)
+plugins=(colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
+autoload -U compinit
+compinit
 
-export MANPATH="/usr/local/man:$MANPATH"
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -101,29 +101,34 @@ export MANPATH="/usr/local/man:$MANPATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="/Users/kunmukh/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/sbin:$PATH"
+source ~/.bash_profile
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/kunmukh/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/Users/kunmukh/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/kunmukh/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/kunmukh/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/kunmukh/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/kunmukh/opt/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/kunmukh/anaconda3/bin:$PATH"
+        export PATH="/Users/kunmukh/opt/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias poweroff="loginctl poweroff"
-alias reboot="loginctl reboot"
-alias lh="ls -trlh"
-alias ll="ls -alF"
-alias hd="hexdump -C"
-alias df="df -h --total"
-alias objdump_intel="objdump --visualize-jumps=extended-color -M intel -d"
-alias dmesg="dmesg -Hx -f kern,user,daemon,syslog"
-alias kdmesg="dmesg -Hx -f kern -l debug,info,notice,warn,err,crit,alert,emerg"
-alias objdump_arm="armv6j-hardfloat-linux-gnueabi-objdump --visualize-jumps=extended-color -d"
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
 
+# @begin(90651256)@ - Do not edit these lines - added automatically!
+# You should customize CIAOPATH before this chunk if you place bundles in
+# places other than ~/.ciao
+if [ -x /Users/kunmukh/.ciaoroot/master/build/bin/ciao-env ] ; then
+  eval "$(/Users/kunmukh/.ciaoroot/master/build/bin/ciao-env --sh)"
+fi
+# @end(90651256)@ - End of automatically added lines.
